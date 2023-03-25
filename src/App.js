@@ -11,13 +11,16 @@ let human = {
   }
 }
 
+let event = (e) => console.log(e.target);
+
+
 const App = () => (
   <div>
     <Ian />
 
  {/* here I pass an object to Maria component */}
  {/* Maria component will then use this object to populate its HTML elements */}
-    <Maria human={human} />
+    <Maria array={event} />
   </div>
 );
 
@@ -28,7 +31,7 @@ class Ian extends React.Component {
   site = (<h1>cruzes</h1>);
 
   faz() {
-    alert("cu");
+    console.log(this.props);
   }
 
   random() {
@@ -36,8 +39,11 @@ class Ian extends React.Component {
   }
 
   render = () => {
+
+    console.log(this.props);
+
     return (
-      <div onClick={this.faz}>
+      <div onClick={() => this.faz()}>
         <h2>O numero também nao é </h2>
       </div>
     );
@@ -49,15 +55,14 @@ let Maria = (props) => {
 
   let _props = props
 
-  console.log(_props)
+  console.log(props)
 
   return (
     <div>
 
-      <h2>Name: {props.human.person.name}</h2>
-      <h2>Surname: {props.human.person.surname}</h2>
-      <h3>Number of nails: {props.human.nails[3]}</h3>
-      <h3> {props.human.head ? 'ALIVE' : 'HEADLESS'}</h3>
+
+      <h2 onClick={_props.array}> aaaaaaaaaa </h2>
+      
 
       
     </div>
