@@ -1,11 +1,13 @@
-
-export const Button = (props) =>{
-    
-    
-
-    return <button onClick={props.onClick}  >{props.text}</button>
+export const Button = (props) => {
 
 
-}
+  return (
+    <select onChange={props.onChange}>
+      <option>Mae</option>
+      <option>Pai</option>
+      <option>Tio</option>
+    </select>
+  );
+};
 // se props.text for undefined, passara esse abaixo
-Button.defaultProps = {text:'err'}
+Button.defaultProps = { text: "err" };
