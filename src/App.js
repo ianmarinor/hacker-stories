@@ -21,8 +21,24 @@ let Text = () => {
 };
 
 class App extends React.Component {
+
+
+  constructor(props){
+    super(props)
+    this.state = {isValid: 'true.'}
+    this.toggleState = this.toggleState.bind(this)
+    
+  }
+
+  toggleState(){
+    
+    let newValue = this.state.isValid == 'true' ? this.state.isValid = 'false ' : this.state.isValid = 'true'
+    this.setState({isValid:newValue})
+  }
+
   render() {
-    return <Button text='CLIQUE AQUI'/>
+
+    return <Button onClick={  this.toggleState } text={this.state.isValid} />
 
     
   }
