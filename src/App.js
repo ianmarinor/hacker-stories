@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button } from "./components/Button";
+import { Button2 } from "./components/Button2";
 
 let human = {
   head: false,
@@ -28,7 +29,7 @@ class App extends React.Component {
     this.state = {isValid: 'true.',parente: 'Selecione um Parente'}
     this.toggleState = this.toggleState.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    console.log(this);
+    // console.log(this);
     
   }
 
@@ -50,8 +51,8 @@ class App extends React.Component {
 
       <div>
 
-        <h1>{this.state.parente}</h1>
-        <Button  onChange={this.handleChange} text={this.state.isValid} />
+       
+        <Button2 />
       </div>
 
     )
