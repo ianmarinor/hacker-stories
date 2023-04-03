@@ -1,26 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
 let i = -1;
 export const Button = (props) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(1);
 
+  useEffect(
+    ()=>{
+      let timer = () => setInterval(
+        ()=>{
+          setText(
+            (prev)=>prev+1
+          )
+        },1000
+      )
 
-  const eventHandler =({target})=>{
-    let texto = target.value
-    console.log();
-    setTimeout(
-      ()=>
-      setText(texto)
-    ,1000)
+    }, []
+  )
 
-  }
+  
 
   return (
     <div>
-      <h1>{text}</h1>
-      <input type="text" onChange={eventHandler} />
+      <h1>{text.toString()[0]}</h1>
     </div>
   );
 };

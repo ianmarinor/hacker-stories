@@ -19,9 +19,16 @@ export const Button2 = (props) => {
         
   };
 
-    // useEffect(
-    //   ()=> console.log(userList)
-    // )
+    useEffect( ()=>{
+
+      console.log('mounted');
+
+
+      return ()=>{
+        console.log('clenaup');
+      }
+
+    }, [user] )
 
   return (
     <div>
